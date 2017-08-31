@@ -1,21 +1,21 @@
 (function(){
     if (!!window.EventSource) {
-        sse('/stream', e => {
+        sse('/stream', function(e){
             console.log(e.data);
             e.target.close();
         });
-        sse('/stream/json', e => {
+        sse('/stream/json', function(e){
             let response = JSON.parse(e.data);
             console.log(response.a, response.b);
             e.target.close();
         });
 
         var source = new EventSource('/stream/mixed');
-        source.addEventListener('message', e => {
+        source.addEventListener('message', function(e){
             console.log('message', e.data);
         }, false);
 
-        source.addEventListener('close', e => {
+        source.addEventListener('close', function(e){
             console.log('close event');
             e.target.close();
         }, false);
