@@ -39,6 +39,7 @@ app.get('/stream/mixed', (req, res) => {
     res.write(`id: ${id}\n`);
     res.write("data: Hello\n\n");
     res.write(sse_json_cons(x));
+    res.write("event: close\ndata: \n\n");
     res.end();
 });
 
