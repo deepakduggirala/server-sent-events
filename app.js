@@ -7,14 +7,19 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/bower_components'));
 
 app.get('/stream', (req, res)=>{
-    res.set('content-type', 'text/event-stream');
+    if(req.get('accept') === 'text/event-stream'){
+        res.set('content-type', 'text/event-stream');
 
-    setInterval(()=>{
-        let id = (new Date()).getTime();
-        res.write(`id: ${id}\n`);
-        res.write('data: My message\ndata: My second Message\n\n');
-        res.write('data: My third Message\n\n')
-    }, 5000);
+        setInterval(()=>{
+            let id = (new Date()).getTime();
+            res.write(`id: ${id}\n`);
+            res.write('data: My message\ndata: My second Message\n\n');
+            res.write('data: My third Message\n\n')
+        }, 5000);
+    }
+    else{
+        res.sendStatus(406);
+    }
 });
 
 app.get('/stream/json', (req, res) => {
