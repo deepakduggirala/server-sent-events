@@ -1,0 +1,17 @@
+{
+  "name": "server-sent-events",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Deepak Duggirala <deepakduggirala.dd@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
