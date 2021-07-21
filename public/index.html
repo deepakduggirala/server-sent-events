@@ -3,16 +3,15 @@
     </head>
     <body>
         <p>Hello</p>
-        <script src="jquery/dist/jquery.js" type="text/javascript"></script>
         <script>
             (function(){
                 if(browserSupportsEventSource()){
-                    loadScript('app.js');
+                    //loadScript('app.js');
                 }
                 else{
                     loadScript('event-source-polyfill/eventsource.js', function(err){
                         if(!err){
-                            loadScript('app.js');
+                            //loadScript('app.js');
                         }
                     });
                 }

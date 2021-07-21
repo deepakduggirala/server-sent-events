@@ -1,0 +1,9 @@
+{
+  "directory": "bower_components",
+  "registry" : "https://binrepo.target.com/artifactory/api/bower/bower-virtual",
+  "resolvers" : [
+    "bower-art-resolver"
+  ],
+  "save": true,
+  "save-exact": true
+}
